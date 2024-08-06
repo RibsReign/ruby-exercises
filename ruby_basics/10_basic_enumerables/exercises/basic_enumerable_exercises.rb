@@ -29,14 +29,21 @@ def find_absolute_values(numbers)
   #   end
   # end
 end
-find_absolute_values([1,4,-4,6,-9])
+#find_absolute_values([1,4,-4,6,-9])
 def find_low_inventory(inventory_list)
   # use #select to iterate through each item of the inventory_list (a hash)
   # return a hash of items with values less than 4
+  inventory_list.select {|k,v| v < 4}
 end
-
+#require 'pry-byebug'
 def find_word_lengths(word_list)
   # use #reduce to iterate through each item of the word_list (an array)
   # return a hash with each word as the key and its length as the value
   # hint: look at the documentation and review the reduce examples in basic enumerable lesson
+  word_list.reduce({}) do |acc, word|
+    acc[word] = word.length
+    binding.pry
+    acc
+  end
 end
+#find_word_lengths(['poopie', 'diaper', 'baby', 'lol'])
