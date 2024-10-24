@@ -53,12 +53,12 @@ def find_language_facts(languages, language_name, fact_index = 0)
   # else 
   #   nil
   # end
-  
-  if languages[language_name] && languages[language_name][:facts]
-    languages[language_name][:facts][fact_index]
-  else 
-    nil
-  end
+  # if languages[language_name] && languages[language_name][:facts] << this will work
+  #   languages[language_name][:facts][fact_index]
+  # else 
+  #   nil
+  # end
+   languages.dig(language_name, :facts, fact_index)
   # the revised languages hash will look something like this:
   # {
   #   ruby: { facts: ['fact 0', 'fact 1'],
